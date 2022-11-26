@@ -11,7 +11,7 @@ class ContactsController extends Controller
 {
     public function index()
     {
-        $contacts = Contacts::leftJoin('tags', 'tags.id', '=', 'contacts.tags')->select('contacts.id', 'contacts.name', 'tags.name as tag_name')->cursorPaginate(10);
+        $contacts = Contacts::leftJoin('tags', 'tags.id', '=', 'contacts.tags')->select('contacts.id', 'contacts.name', 'contacts.contact_number', 'tags.name as tag_name')->cursorPaginate(10);
         return response()->json([
             'success' => true,
             'data' => $contacts

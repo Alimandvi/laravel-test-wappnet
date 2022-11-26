@@ -23,6 +23,7 @@ class ContactsFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
+            'contact_number' => rand(1111111111,9999999999),
             'tags' => rand(1,10),
         ];
     }
